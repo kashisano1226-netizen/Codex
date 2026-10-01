@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081535">
+  <meta name="description" content="小学1年生向けに、太陽系の8つの惑星を楽しく学べるデジタル絵本です。">
+  <title>ほしぞらたんけんたい！｜太陽系デジタル絵本</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" data-go="0" aria-label="さいしょのページへ">
+      <span class="brand-mark">☀</span>
+      <span>ほしぞらたんけんたい！</span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-button" id="soundButton" type="button" aria-pressed="false">
+        <span aria-hidden="true">🔊</span><span>よみあげる</span>
+      </button>
+      <button class="icon-button" id="listButton" type="button" aria-expanded="false" aria-controls="planetPanel">
+        <span aria-hidden="true">☷</span><span>わくせい いちらん</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="book" aria-live="polite">
+      <div class="eyebrow" id="eyebrow"></div>
+      <div class="page-grid">
+        <div class="illustration-wrap">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="planet" id="planetArt" role="img"></div>
+          <span class="sparkle sparkle-one" aria-hidden="true">✦</span>
+          <span class="sparkle sparkle-two" aria-hidden="true">✧</span>
+        </div>
+        <article class="story">
+          <p class="page-number" id="pageNumber"></p>
+          <h1 id="title"></h1>
+          <p class="subtitle" id="subtitle"></p>
+          <p class="description" id="description"></p>
+          <div class="fact" id="fact">
+            <span class="fact-icon" aria-hidden="true">💡</span>
+            <div><strong>びっくりポイント</strong><p id="factText"></p></div>
+          </div>
+        </article>
+      </div>
+
+      <nav class="page-nav" aria-label="ページいどう">
+        <button class="nav-button secondary" id="prevButton" type="button">← <span>まえへ</span></button>
+        <div class="progress-wrap">
+          <div class="progress-dots" id="progressDots" aria-label="ページのすすみぐあい"></div>
+          <p id="progressText"></p>
+        </div>
+        <button class="nav-button primary" id="nextButton" type="button"><span>つぎへ</span> →</button>
+      </nav>
+    </section>
+  </main>
+
+  <aside class="planet-panel" id="planetPanel" aria-hidden="true" aria-label="わくせい いちらん">
+    <div class="panel-head">
+      <div><p>どこへ いく？</p><h2>わくせい いちらん</h2></div>
+      <button class="close-button" id="closeButton" type="button" aria-label="いちらんを とじる">×</button>
+    </div>
+    <div class="planet-list" id="planetList"></div>
+    <p class="panel-note">太陽に ちかい じゅんばんだよ</p>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <footer><span>✦</span> ゆっくり、じぶんのペースで たのしんでね <span>✦</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
